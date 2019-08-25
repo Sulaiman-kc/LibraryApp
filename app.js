@@ -11,11 +11,11 @@ const nav=[
         title:'Authors'
     },
     {
-        link:'/signin',
+        link:'/users/signin',
         title:'Sign In'
     },
     {
-        link:'/signup',
+        link:'/users/signup',
         title:'Sign Up'
     }
     ];
@@ -24,19 +24,19 @@ const nav=[
 var app=express();
 const booksRouter=require('./src/routes/bookRoutes.js')(nav);
 const authorsRouter=require('./src/routes/authorRoutes.js')(nav);
-const signinRouter=require('./src/routes/signinRoutes.js')(nav);
+const signinRouter=require('./src/routes/usersRoutes.js')(nav);
+
 
 
 app.use('/books',booksRouter);
 app.use('/authors',authorsRouter);
-app.use('/signin',signinRouter);
+app.use('/users',signinRouter);
 
 
 
 app.use(express.static(path.join(__dirname,"/public")));
 app.set('views','./src/views');
 app.set('view engine','ejs');
-
 
 
 
