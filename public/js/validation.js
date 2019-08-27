@@ -73,7 +73,7 @@ function signUp()
         alert("Missmatch on confirm password"); 
         return false; 
     } 
-    window.location = "/src/views/dashboard.ejs";
+    window.location = "/dashboard";
     alert("Welcome " + firstName + " " + lastName);
     // return true; 
 }
@@ -113,7 +113,73 @@ function signIn()
         alert("Password must contain 8 letters"); 
         return false; 
     } 
-    window.location = "/src/views/dashboard.ejs";
+    window.location = "/dashboard";
     alert("You are successfully signed in");
     // return true;
+}
+
+
+function addBooks()                                    
+{ 
+    var book_title = document.forms["AddBooks"]["book_title"].value;               
+    var genre = document.forms["AddBooks"]["genre"].value;               
+    var author = document.forms["AddBooks"]["author"].value;  
+    var image = document.forms["AddBooks"]["image"].value;  
+   
+    if (book_title == "")                                  
+    { 
+        alert("Please enter your first name"); 
+        return false; 
+    } 
+   
+    if (genre == "")                               
+    { 
+        alert("Please enter your last name"); 
+        return false; 
+    } 
+    if (author == "")                                  
+    { 
+        alert("Please enter your first name"); 
+        return false; 
+    } 
+   
+    if (image == "")                               
+    { 
+        alert("Please enter your last name"); 
+        return false; 
+    } 
+    alert("Sucessfully added the book "+ book_title);
+}
+
+
+function addAuthors()                                    
+{ 
+    var name = document.forms["AddBooks"]["name"].value;               
+    var dob = document.forms["AddBooks"]["dob"].value;               
+    var place = document.forms["AddBooks"]["place"].value;  
+    var image = document.forms["AddBooks"]["image"].value;  
+   
+    if (name == "")                                  
+    { 
+        alert("Please enter your first name"); 
+        return false; 
+    } 
+   
+    if (dob == "")                               
+    { 
+        alert("Please enter your last name"); 
+        return false; 
+    } 
+    if (place == "")                                  
+    { 
+        alert("Please enter your first name"); 
+        return false; 
+    } 
+   
+    if (image == "")                               
+    { 
+        alert("Please enter your last name"); 
+        return false; 
+    } 
+    alert("Sucessfully added the author "+ name);
 }

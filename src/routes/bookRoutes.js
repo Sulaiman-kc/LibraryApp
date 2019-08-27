@@ -2,27 +2,8 @@ const express= require('express');
 const booksRouter=express.Router();
 
 
-function router(nav){
-    var books=[
-        {
-            title:'Sherlock Holmes',
-            genre:'Detective',
-            author:'Arthur Conan Doyle',
-            image:'b1.jpg'
-        },
-        {
-            title:'Fault in Our Stars',
-            genre:'Romance,Emotional',
-            author:'John Green',
-            image:'b2.jpg'
-        },
-        {
-            title:'At First Bite',
-            genre:'Paranomal Fiction',
-            author:'Ruth Ames',
-            image:'b3.jpg'
-        }
-    ]
+function router(nav,books){
+
     
     booksRouter.route('/:id')
      .get((req,res)=>{
