@@ -128,24 +128,24 @@ function addBooks()
    
     if (book_title == "")                                  
     { 
-        alert("Please enter your first name"); 
+        alert("Please enter your book title"); 
         return false; 
     } 
    
     if (genre == "")                               
     { 
-        alert("Please enter your last name"); 
+        alert("Please enter your genre"); 
         return false; 
     } 
     if (author == "")                                  
     { 
-        alert("Please enter your first name"); 
+        alert("Please enter your author"); 
         return false; 
     } 
    
     if (image == "")                               
     { 
-        alert("Please enter your last name"); 
+        alert("Please enter your image"); 
         return false; 
     } 
     alert("Sucessfully added the book "+ book_title);
@@ -161,24 +161,24 @@ function addAuthors()
    
     if (name == "")                                  
     { 
-        alert("Please enter your first name"); 
+        alert("Please enter Author name"); 
         return false; 
     } 
    
     if (dob == "")                               
     { 
-        alert("Please enter your last name"); 
+        alert("Please enter dob"); 
         return false; 
     } 
     if (place == "")                                  
     { 
-        alert("Please enter your first name"); 
+        alert("Please enter the place"); 
         return false; 
     } 
    
     if (image == "")                               
     { 
-        alert("Please enter your last name"); 
+        alert("Please enter image"); 
         return false; 
     } 
     alert("Sucessfully added the author "+ name);
