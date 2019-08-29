@@ -154,10 +154,10 @@ function addBooks()
 
 function addAuthors()                                    
 { 
-    var name = document.forms["AddBooks"]["name"].value;               
-    var dob = document.forms["AddBooks"]["dob"].value;               
-    var place = document.forms["AddBooks"]["place"].value;  
-    var image = document.forms["AddBooks"]["image"].value;  
+    var name = document.forms["AddAuthors"]["name"].value;               
+    var dob = document.forms["AddAuthors"]["dob"].value;               
+    var place = document.forms["AddAuthors"]["place"].value;  
+    var image = document.forms["AddAuthors"]["image"].value;  
    
     if (name == "")                                  
     { 
