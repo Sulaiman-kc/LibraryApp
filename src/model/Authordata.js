@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost:27017/LibraryApp');
+mongoose.connect('mongodb+srv://sulaimankc:sulaimankc@cluster0-9e1fm.mongodb.net/test?retryWrites=true&w=majority');
 const Schema = mongoose.Schema;
 
 var newAuthorSchema = new Schema({

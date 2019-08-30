@@ -83,11 +83,17 @@
         <div class="row">   
           <div class="col-md-12">   
             <div class="panel">
+              
               <div class="panel-body">
                 <div class="row">
                   <div class="col-md-3"></div>
                     <div class="col-md-6">
-                      <form action="/dashboard" name="RegForm" onsubmit="return signUp()">
+                      <%if(errors != ''){%>
+                        <div class="alert alert-warning">
+                            <strong>Error!</strong> <%=errors[0].msg%>
+                          </div>
+                          <%}%>
+                      <form action="/users/adduser" name="RegForm" onsubmit="return signUp()">
                         <div class="row">
                             <div class="form-group col-md-6">
                                 <label for="first-name">First Name</label>

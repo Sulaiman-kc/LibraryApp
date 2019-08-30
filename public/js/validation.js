@@ -73,7 +73,7 @@ function signUp()
         alert("Missmatch on confirm password"); 
         return false; 
     } 
-    window.location = "/dashboard";
+    // window.location = "/dashboard";
     alert("Welcome " + firstName + " " + lastName);
     // return true; 
 }
@@ -113,7 +113,7 @@ function signIn()
         alert("Password must contain 8 letters"); 
         return false; 
     } 
-    window.location = "/dashboard";
+    // window.location = "/dashboard";
     alert("You are successfully signed in");
     // return true;
 }
