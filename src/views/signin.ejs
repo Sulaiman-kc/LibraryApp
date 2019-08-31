@@ -86,12 +86,17 @@
           <div class="row">
             <div class="col-md-3"></div>
               <div class="col-md-6">
-                  <%if(errors != ''){%>
-                    <div class="alert alert-warning">
-                        <strong>Error!</strong> <%=errors[0].msg%>
+                  <%if(sucess != ''){%>
+                    <div class="alert alert-success">
+                        <strong>Error!</strong> <%=sucess%>
                       </div>
                       <%}%>
-                <form action="/users/checkuser" name="signin" onsubmit="return signIn()">
+                  <%if(errors != ''){%>
+                    <div class="alert alert-warning">
+                        <strong>Error!</strong> <%=errors%>
+                      </div>
+                      <%}%>
+                <form action="/users/checkuser" name="signin" onsubmit="">
                   <div class="form-group" >
                     <label for="email">E-mail</label>
                     <input type="text" name="email" class="form-control">

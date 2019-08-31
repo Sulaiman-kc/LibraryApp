@@ -90,35 +90,40 @@
                     <div class="col-md-6">
                       <%if(errors != ''){%>
                         <div class="alert alert-warning">
-                            <strong>Error!</strong> <%=errors[0].msg%>
+                            <strong>Error!</strong> <%=errors%>
                           </div>
                           <%}%>
-                      <form action="/users/adduser" name="RegForm" onsubmit="return signUp()">
+                          <%if(error != ''){%>
+                            <div class="alert alert-warning">
+                                <strong>Error!</strong> <%=error%>
+                              </div>
+                              <%}%>
+                      <form action="/users/adduser" name="RegForm" onsubmit="">
                         <div class="row">
                             <div class="form-group col-md-6">
                                 <label for="first-name">First Name</label>
-                                <input type="text" name="first_name" class="form-control">
+                                <input type="text" value="<%=item.first_name%>" name="first_name" class="form-control">
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="last-name">Last Name</label>
-                                <input type="text" name="last_name" class="form-control">
+                                <input type="text" value="<%=item.last_name%>" name="last_name" class="form-control">
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="email">E-mail</label>
-                            <input type="text" name="email" class="form-control">
+                            <input type="text" value="<%=item.email%>" name="email" class="form-control">
                         </div>
                         <div class="form-group">
                             <label for="number">Mobile Number</label>
-                            <input type="text" name="number" class="form-control">
+                            <input type="text" value="<%=item.number%>" name="number" class="form-control">
                         </div>
                         <div class="form-group">
                             <label for="password">Password</label>
-                            <input type="text" name="password" class="form-control">
+                            <input type="text" value="<%=item.password%>" name="password" class="form-control">
                         </div>
                         <div class="form-group">
                             <label for="confirm-password">Confirm Password</label>
-                            <input type="text" name="confirm_password" class="form-control">
+                            <input type="text" value="<%=item.confirm_password%>" name="confirm_password" class="form-control">
                         </div>
 
                         <button class="btn btn-primary" type="submit">SignUp</button>

@@ -1,11 +1,12 @@
 const express=require('express');
 const dashboardRouter=express.Router();
 const bookData=require('../model/Bookdata');
-const authorData =require('../model/Authordata')
+const authorData =require('../model/Authordata');
+const {ensureAuthenticated} = require('../config/auth')
 
 function router(nav){
    
-    dashboardRouter.route('/')
+    dashboardRouter.route('/', ensureAuthenticated)
     .get((req,res)=>{
         bookData.find().then(function(books){
             authorData.find().then((authors)=>{
