@@ -1,13 +1,10 @@
 const express=require('express');
 const signinRouter=express.Router();
 const userData=require('../model/Userdata');
-var errors = '';
 var error = '';
 var success = '';
 var item=[];
-
 function router(nav){
-
     signinRouter.route('/adduser')
     .get((req,res)=>{
         const cemail=req.param('email');
@@ -23,7 +20,7 @@ function router(nav){
             }
 
             if(user != ''){
-                errors = 'Email already exist'
+                error = 'Email already exist'
                 res.redirect('/users/signup'); 
             }else{
                 var user = new userData(item);
@@ -108,12 +105,10 @@ function router(nav){
         {
             nav,
             title:'Sign Up',
-            errors,
             error,
             item
         
         });
-        errors = '';
         error = '';
         item.last_name = ''
         item.first_name = ''
@@ -129,11 +124,11 @@ function router(nav){
             {
                 nav,
                 title:'Sign In',
-                errors,
-                success
+                error,
+                success,
             }); 
             success = ''
-            errors = ''
+            error = ''
         });
     signinRouter.route('/checkuser')
     .get((req,res)=>{
@@ -141,16 +136,31 @@ function router(nav){
         const cpassword=req.param('password');        
         userData.find({$and:[{ email: cemail},{password: cpassword}]})
         .then(function(user){
-        console.log(user)
             if(user!=''){
-                res.redirect('/dashboard'); 
+                if(cemail == 'admin@mail.com'){
+                    res.redirect('/dashboard'); 
+                } else{
+                    res.redirect('/users/userAccount/')
+                }
             }else{
-                errors = 'Incorrect Email or password'
+                error = 'Incorrect Email or password'
                 res.redirect('/users/signin')
             }
 
         });
     });
+    signinRouter.route('/logout')
+    .get((req,res)=>{
+        res.redirect('/users/signin');
+    });
+
+    signinRouter.route('/userAccount')
+    .get((req,res)=>{
+        res.render('userAccount',{
+            title :'userAccount'
+        })
+    })
+    
     return signinRouter; 
 }
 module.exports=router;

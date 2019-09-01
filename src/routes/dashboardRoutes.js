@@ -2,11 +2,10 @@ const express=require('express');
 const dashboardRouter=express.Router();
 const bookData=require('../model/Bookdata');
 const authorData =require('../model/Authordata');
-const {ensureAuthenticated} = require('../config/auth')
 
 function router(nav){
    
-    dashboardRouter.route('/', ensureAuthenticated)
+    dashboardRouter.route('/')
     .get((req,res)=>{
         bookData.find().then(function(books){
             authorData.find().then((authors)=>{
@@ -87,7 +86,7 @@ function router(nav){
     .get((req,res)=>{
        const id=req.params.id;
        authorData.update({_id:id},{name: req.param('name'),dob: req.param('dob'),place: req.param('place')})
-       .then(function(){
+       .then(function(author){
           res.redirect('/dashboard');
        });
    });

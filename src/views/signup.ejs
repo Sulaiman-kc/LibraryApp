@@ -26,24 +26,24 @@
       <a href="/" class="navbar-brand">Home</a>
     </div>
     <nav class="collapse navbar-collapse" role="navigation">
-      <ul class="nav navbar-nav">
-        <% for(var i=0;i<nav.length;i++){%>
-          <li>
-              <a href="<%=nav[i].link%>"><%=nav[i].title%></a>
+        <ul class="nav navbar-nav">
+          <% for(var i=0;i < nav.length;i++){%>
+            <li>
+                <a href="<%=nav[i].link%>"><%=nav[i].title%></a>
+            </li>
+          <%}%>
+        </ul>
+        <ul class="nav navbar-right navbar-nav">
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-search"></i></a>
+            <ul class="dropdown-menu" style="padding:12px;">
+              <form class="form-inline">
+                <button type="submit" class="btn btn-default pull-right"><i class="glyphicon glyphicon-search"></i></button><input type="text" class="form-control pull-left" placeholder="Search">
+              </form>
+            </ul>
           </li>
-        <%}%>
-      </ul>
-      <ul class="nav navbar-right navbar-nav">
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-search"></i></a>
-          <ul class="dropdown-menu" style="padding:12px;">
-            <form class="form-inline">
-              <button type="submit" class="btn btn-default pull-right"><i class="glyphicon glyphicon-search"></i></button><input type="text" class="form-control pull-left" placeholder="Search">
-            </form>
-          </ul>
-        </li>
-      </ul>
-    </nav>
+        </ul>
+      </nav>
   </div>
 </header>
 
@@ -88,11 +88,7 @@
                 <div class="row">
                   <div class="col-md-3"></div>
                     <div class="col-md-6">
-                      <%if(errors != ''){%>
-                        <div class="alert alert-warning">
-                            <strong>Error!</strong> <%=errors%>
-                          </div>
-                          <%}%>
+                      
                           <%if(error != ''){%>
                             <div class="alert alert-warning">
                                 <strong>Error!</strong> <%=error%>
@@ -119,11 +115,11 @@
                         </div>
                         <div class="form-group">
                             <label for="password">Password</label>
-                            <input type="text" value="<%=item.password%>" name="password" class="form-control">
+                            <input type="password" value="<%=item.password%>" name="password" class="form-control">
                         </div>
                         <div class="form-group">
                             <label for="confirm-password">Confirm Password</label>
-                            <input type="text" value="<%=item.confirm_password%>" name="confirm_password" class="form-control">
+                            <input type="password" value="<%=item.confirm_password%>" name="confirm_password" class="form-control">
                         </div>
 
                         <button class="btn btn-primary" type="submit">SignUp</button>

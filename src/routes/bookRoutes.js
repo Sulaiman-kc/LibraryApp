@@ -1,10 +1,7 @@
 const express= require('express');
 const booksRouter=express.Router();
 const bookData=require('../model/Bookdata');
-
 function router(nav){
-
-    
     booksRouter.route('/:id')
      .get((req,res)=>{
         const id=req.params.id;
@@ -14,7 +11,7 @@ function router(nav){
             {
                 nav,
                 title:book.title,
-                book
+                book,
             });
          });  
      });
@@ -27,7 +24,7 @@ function router(nav){
             {
                 nav,
                 title:'Books',
-                books
+                books,
             });
          });  
     });
